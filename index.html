@@ -1,57 +1,76 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>My Personal Webpage</title>
-     <link rel="stylesheet" href="styles.css">
- </head>
- <body>
-     <header>
-         <h1>Welcome to My Personal Webpage</h1>
-     </header>
-     <main>
-         <section>
-             <h2>About Me</h2>
-             <p>Write a brief introduction about yourself here.</p>
-			    <img src="your-image.jpg" alt="A picture of me">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Approved Used Cars</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-pzjw8f+ua7Kw1TIq0JfakFPueQInthnJy4D8ETwD5nZc8zXGpfs2Jh0p/WezUlVp" crossorigin="anonymous">
+    <!-- Your Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-4">
+        <h1>BMW Approved Used Cars</h1>
+        <p>Experience luxury and performance with our certified pre-owned BMWs</p>
+    </header>
 
-         </section>
-         <section>
-             <h2>My Hobbies</h2>
-             <ul>
-                 <li>Hobby 1</li>
-                 <li>Hobby 2</li>
-                 <li>Hobby 3</li>
-             </ul>
-         </section>
-         <section>
-             <h2>Contact Me</h2>
-             <form action="submit_form.php" method="post">
-       <label for="name">Name:</label>
-       <input type="text" id="name" name="name" required><br><br>
-       <label for="email">Email:</label>
-       <input type="email" id="email" name="email" required><br><br>
-       <label for="message">Message:</label><br>
-       <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
-       <input type="submit" value="Submit">
-				</form>
+    <main class="container mt-5">
+        <!-- Search Section -->
+        <section>
+            <h2>Find Your BMW</h2>
+            <form action="search_results.html" method="get" class="form-inline">
+                <input type="text" class="form-control mr-2" placeholder="Search by model or keyword" name="search">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </section>
 
-         </section>
-         <section>
-             <h2>Find Me Here</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537353153169!3d-37.81627977975195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d9f0b1b0b1b1!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1611814511234!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-         </section>
-         <section>
-             <h2>Watch My Video</h2>
-              <video width="320" height="240" controls>
-       <source src="your-video.mp4" type="video/mp4">
-       Your browser does not support the video tag.
-   </video>
-         </section>
-     </main>
-     <footer>
-         <p>Contact me at: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-     </footer>
- </body>
- </html>
+        <!-- Benefits Section -->
+        <section class="mt-5">
+            <h2>Why Choose BMW Approved Used?</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Minimum 12-month unlimited mileage BMW Warranty</li>
+                <li class="list-group-item">Verified vehicle history and mileage check</li>
+                <li class="list-group-item">Meticulous technical and mechanical checks</li>
+                <li class="list-group-item">Fully road tested by qualified BMW technicians</li>
+                <li class="list-group-item">Only Genuine BMW Parts used</li>
+            </ul>
+        </section>
+
+        <!-- Finance Options Section -->
+        <section class="mt-5">
+            <h2>Flexible Finance Options</h2>
+            <p>Explore tailored finance solutions to suit your budget and lifestyle.</p>
+            <a href="finance.html" class="btn btn-secondary">Learn More</a>
+        </section>
+
+        <!-- Featured Vehicles Section -->
+        <section class="mt-5">
+            <h2>Featured BMWs</h2>
+            <div class="row">
+                <!-- Example Vehicle Card -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="bmw1.jpg" class="card-img-top" alt="BMW 3 Series">
+                        <div class="card-body">
+                            <h5 class="card-title">BMW 3 Series</h5>
+                            <p class="card-text">2019 | 20,000 miles | £25,000</p>
+                            <a href="vehicle_details.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional vehicle cards can be added here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>Contact us at: <a href="mailto:info@bmwusedcars.co.uk" class="text-white">info@bmwusedcars.co.uk</a></p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zyfU7Q2v1XpM4oN4j29zfiXKxsH7puQw8yJfpqg3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb2YdxtA7Kw1TIq0JfakFPueQInthnJy4D8ETwD5nZc8zXGpfs2Jh0p/WezUlVp" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0JfakFPueQInthnJy4D8ETwD5nZc8zXGpfs2Jh0p/WezUlVp" crossorigin="anonymous"></script>
+</body>
+</html>
