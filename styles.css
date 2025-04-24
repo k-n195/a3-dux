@@ -1,43 +1,92 @@
- body {
-     font-family: Arial, sans-serif;
-     margin: 0;
-     padding: 0;
-     background-color: #f4f4f4;
- }
+/* ----------  Base palette ---------- */
+:root{
+  --navy:#0b1c34;
+  --bmw-blue:#1c62b9;
+  --silver:#e3e6eb;
+  --silver-light:#f5f7fa;
+  --text:#1b1b1b;
+  --white:#ffffff;
+  --accent:#ffb400;
+}
 
- header {
-     background-color: #333;
-     color: white;
-     padding: 1rem;
-     text-align: center;
- }
+/* ----------  Resets & typography ---------- */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:"Helvetica Neue",Arial,sans-serif;
+  line-height:1.55;
+  background:var(--silver-light);
+  color:var(--text);
+  padding-top:80px;            /* leaves space for fixed navbar */
+}
+h1,h2,h3{font-weight:700;color:var(--navy);margin-bottom:.4rem;}
+a{color:var(--bmw-blue);text-decoration:none;transition:color .15s;}
+a:hover{color:var(--accent);}
 
- main {
-     padding: 1rem;
- }
+/* ----------  Navbar (single rule) ---------- */
+.navbar{
+  /* fixed positioning */
+  position:fixed; top:0; left:0; z-index:1000;
+  /* your custom sizing / look */
+  width:auto; height:auto; margin:15px; padding:10px 20px;
+  font-size:large; font-weight:bold; border-radius:40px;
+  display:flex; flex-wrap:wrap; align-items:center; gap:1rem;
+  cursor:pointer; background:var(--navy); color:var(--white);
+  box-shadow:0 2px 6px rgba(0,0,0,.25);
+}
+.brand{display:flex;align-items:center;color:var(--white);}
+.brand img{width:32px;margin-right:8px;}
+.toggle{display:none;border:2px solid var(--white);background:none;color:var(--white);padding:2px 6px;font-size:1rem;cursor:pointer;}
+.nav-links{display:flex;gap:1rem;}
+.nav-links a{color:var(--white);font-size:.95rem;}
+.nav-links a:hover{color:var(--accent);}
 
- section {
-     margin-bottom: 1rem;
- }
+/* mobile nav */
+@media(max-width:680px){
+  .toggle{display:block;}
+  .nav-links{display:none;width:100%;flex-direction:column;margin-top:.5rem;}
+  .nav-links.show{display:flex;}
+  .nav-links a{padding:.4rem 0;}
+}
 
- h2 {
-     color: #333;
- }
+/* ----------  Hero ---------- */
+.hero{background:var(--navy);color:var(--white);text-align:center;padding:2rem 1rem;}
+.hero h1{font-size:1.5rem;margin-bottom:.3rem;}
 
- ul {
-     list-style-type: square;
- }
+/* ----------  Layout ---------- */
+.container{max-width:960px;margin:2rem auto;padding:0 1rem;}
+section{margin-bottom:2rem;}
 
- footer {
-     background-color: #333;
-     color: white;
-     text-align: center;
-     padding: 1rem;
-     position: fixed;
-     width: 100%;
-     bottom: 0;
- }
+/* ----------  Search bar ---------- */
+.search-bar{display:flex;gap:.5rem;flex-wrap:wrap;}
+.search-bar input{flex:1 1 220px;padding:.5rem;border:1px solid #ccc;border-radius:4px;}
+.btn{background:var(--bmw-blue);color:var(--white);border:none;padding:.55rem 1rem;cursor:pointer;border-radius:4px;}
+.btn:hover{background:#154c8d;}
+.btn-warning{background:var(--accent);color:#000;}
+.btn-warning:hover{background:#d99b00;}
 
- a {
-     color: #ff6347;
- }
+/* ----------  Bullet list ---------- */
+.bullets{list-style:none;margin-top:.8rem;}
+.bullets li{margin-bottom:.4rem;padding-left:1.3rem;position:relative;}
+.bullets li::before{content:"✓";position:absolute;left:0;color:var(--accent);}
+
+/* ----------  Cards grid ---------- */
+.grid{display:grid;gap:1rem;}
+@media(min-width:600px){.grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr);}}
+
+.card{
+  background:#fff;border-radius:8px;overflow:hidden;
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
+  display:flex;flex-direction:column;
+  transition:transform .15s,box-shadow .15s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 18px rgba(0,0,0,.12);}
+.card img{width:100%;height:180px;object-fit:cover;}
+.card-body{padding:.9rem;display:flex;flex-direction:column;flex:1;}
+.card-title{font-size:1.05rem;margin-bottom:.4rem;}
+.card-text{font-size:.9rem;margin-bottom:auto;}
+
+/* ----------  Footer ---------- */
+.footer{background:var(--navy);color:var(--white);text-align:center;padding:1rem;font-size:.9rem;}
+.footer a{color:var(--accent);}
+.footer a:hover{text-decoration:underline;}
