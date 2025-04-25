@@ -68,10 +68,50 @@ section{margin-bottom:2rem;}
 .bullets li{margin-bottom:.4rem;padding-left:1.3rem;position:relative;}
 .bullets li::before{content:"✓";position:absolute;left:0;color:var(--accent);}
 
-/* ----------  Cards grid ---------- */
-.grid{display:grid;gap:1rem;}
-@media(min-width:600px){.grid{grid-template-columns:repeat(2,1fr);}}
-@media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr);}}
+/* ----------  Carousel ---------- */
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+
+.carousel {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel .card {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.carousel .card img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  max-height: 180px; /* Adjusted max-height for smaller images */
+  object-fit: contain; /* Ensure image fits well and is not zoomed */
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.carousel-control.left {
+  left: 10px;
+}
+
+.carousel-control.right {
+  right: 10px;
+}
 
 /* cards */
 .card{
@@ -81,7 +121,6 @@ section{margin-bottom:2rem;}
   transition:transform .15s,box-shadow .15s;
 }
 .card:hover{transform:translateY(-4px);box-shadow:0 8px 18px rgba(0,0,0,.12);}
-.card img{width:100%;height:200px;object-fit:cover;}   /* tidy fit */
 .card-body{padding:.9rem;display:flex;flex-direction:column;flex:1;}
 .card-title{font-size:1.05rem;margin-bottom:.4rem;}
 .card-text{font-size:.9rem;margin-bottom:auto;}
@@ -89,6 +128,7 @@ section{margin-bottom:2rem;}
 /* ----------  Footer ---------- */
 .footer{background:var(--navy);color:var(--white);text-align:center;padding:1rem;font-size:.9rem;}
 .footer a{color:var(--accent);}
+
 .footer a:hover{text-decoration:underline;}
 
 /* =========================================================
@@ -97,7 +137,6 @@ section{margin-bottom:2rem;}
 
 /* ----------  0 – 479 px : small phones ---------- */
 @media (max-width:479px){
-
   /* slimmer navbar pill so it fits narrow screens */
   .navbar{
     margin:10px;
@@ -109,27 +148,36 @@ section{margin-bottom:2rem;}
 
   /* single‑column card grid */
   .grid{grid-template-columns:1fr;}
+  .carousel-wrapper{width:100%;}
+
+  /* make carousel cards smaller */
+  .carousel .card{
+    width: 80%;
+    margin: 0 auto;
+  }
+  .carousel .card img{
+    max-height: 150px;  /* Adjust max-height for smaller screens */
+  }
 }
 
 /* ----------  480 – 899 px : large phones & tablets ---------- */
 @media (min-width:480px) and (max-width:899px){
+  .carousel-wrapper{width:100%;}
 
-  .navbar{
-    margin:18px;
-    padding:14px 26px;
-    font-size:1.25rem;
+  /* make carousel cards smaller */
+  .carousel .card{
+    width: 90%;
+    margin: 0 auto;
   }
-  .brand img{width:70px;}
-
-  /* two‑column cards on tablets */
-  .grid{grid-template-columns:repeat(2,1fr);}
+  .carousel .card img{
+    max-height: 180px;  /* Adjust max-height for tablets */
+  }
 }
 
-/* ----------  900 px + : laptops & desktops ---------- */
+/* ----------  900 px + : laptops & desktops ---------- */
 @media (min-width:900px){
-
-  /* keep current pill size but widen card pictures */
-  .card img{height:220px;}
-  /* three‑column grid already defined, no change */
+  /* cards remain at full size with larger images */
+  .carousel .card img{
+    max-height: 180px;  /* Adjusted max-height for consistency */
+  }
 }
-
