@@ -3,128 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BMW Gallery – Approved Used</title>
-
-  <!-- reuse the same stylesheet -->
-  <link rel="stylesheet" href="styles.css" />
+  <title>BMW Gallery</title>
+  <link rel="stylesheet" href="gallery.css" />
 </head>
 
 <body>
-  <!-- NAVBAR (exactly the same) -->
   <nav class="navbar">
     <a href="index.html" class="brand">
       <img src="bm.jpg.jpg" alt="BMW logo" />
-      BMW Approved Used
+      BMW M Series
     </a>
-
     <button class="toggle" id="navToggle">☰</button>
-
     <div class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
       <a href="gallery.html">Gallery</a>
-      <a href="https://www.bmw.co.uk/en/all-models.html" target="_blank">Models</a>
     </div>
   </nav>
 
-  <!-- HERO -->
   <header class="hero">
-    <h1>BMW Approved Used – Gallery</h1>
-    <p>Browse our wider stock of premium vehicles</p>
+    <h1>BMW Gallery</h1>
+    <p>High-performance vehicles for every enthusiast</p>
   </header>
 
-  <!-- MAIN -->
   <main class="container">
     <section>
-      <h2>All Vehicles</h2>
-
-      <!-- GRID of 8 sample cards -->
       <div class="grid">
-
-        <!-- card A (anchors so home-page ‘View Details’ can target #series3 ) -->
-        <div class="card" id="series3">
-          <img src="3-s.png" alt="BMW 3 Series" />
-          <div class="card-body">
-            <h3 class="card-title">BMW 3 Series (G20)</h3>
-            <p class="card-text">2019 • 20 000 mi • £25 000</p>
-            <a class="btn" href="vehicle_details.html?car=series3">More Info</a>
-          </div>
-        </div>
-
-        <!-- card B -->
-        <div class="card" id="x5">
-          <img src="x5.png" alt="BMW X5" />
-          <div class="card-body">
-            <h3 class="card-title">BMW X5 (G05)</h3>
-            <p class="card-text">2021 • 8 500 mi • £46 750</p>
-            <a class="btn" href="vehicle_details.html?car=x5">More Info</a>
-          </div>
-        </div>
-
-        <!-- card C -->
-        <div class="card" id="m4">
-          <img src="m42.png" alt="BMW M4 Competition" />
-          <div class="card-body">
-            <h3 class="card-title">BMW M4 Competition</h3>
-            <p class="card-text">2022 • 4 100 mi • £64 990</p>
-            <a class="btn" href="vehicle_details.html?car=m4">More Info</a>
-          </div>
-        </div>
-
-        <!-- five extra demo vehicles -->
+        <!-- M2 -->
         <div class="card">
-          <img src="i4.png" alt="BMW i4" />
+          <img src="m2.png" alt="BMW M2 Coupe" />
           <div class="card-body">
-            <h3 class="card-title">BMW i4 eDrive40</h3>
-            <p class="card-text">2023 • 3 200 mi • £52 300</p>
-            <a class="btn" href="vehicle_details.html?car=i4">More Info</a>
+            <h3 class="card-title">BMW M2 Coupe</h3>
+            <p class="card-text">2021 • 10 200 mi • £38 500</p>
+            <a class="btn" href="vehicle_details.html">View Details</a>
           </div>
         </div>
 
+        <!-- M3 -->
         <div class="card">
-          <img src="z4.png" alt="BMW Z4" />
+          <img src="m3.png" alt="BMW M3 Competition" />
           <div class="card-body">
-            <h3 class="card-title">BMW Z4 Roadster</h3>
-            <p class="card-text">2020 • 12 700 mi • £37 850</p>
-            <a class="btn" href="vehicle_details.html?car=z4">More Info</a>
+            <h3 class="card-title">BMW M3 Competition</h3>
+            <p class="card-text">2023 • 5 800 mi • £67 000</p>
+            <a class="btn" href="vehicle_details.html">View Details</a>
           </div>
         </div>
 
+        <!-- M4 -->
         <div class="card">
-          <img src="x3.png" alt="BMW X3" />
+          <img src="m4.png" alt="BMW M4 Convertible" />
           <div class="card-body">
-            <h3 class="card-title">BMW X3 xDrive20d</h3>
-            <p class="card-text">2019 • 28 400 mi • £30 900</p>
-            <a class="btn" href="vehicle_details.html?car=x3">More Info</a>
+            <h3 class="card-title">BMW M4 Convertible</h3>
+            <p class="card-text">2022 • 7 100 mi • £72 950</p>
+            <a class="btn" href="vehicle_details.html">View Details</a>
           </div>
         </div>
 
+        <!-- M5 -->
         <div class="card">
-          <img src="5series.png" alt="BMW 5 Series" />
+          <img src="m5cs.png" alt="BMW M5 CS" />
           <div class="card-body">
-            <h3 class="card-title">BMW 5 Series (G30)</h3>
-            <p class="card-text">2018 • 33 800 mi • £23 400</p>
-            <a class="btn" href="vehicle_details.html?car=series5">More Info</a>
+            <h3 class="card-title">BMW M5 CS</h3>
+            <p class="card-text">2021 • 12 500 mi • £89 990</p>
+            <a class="btn" href="vehicle_details.html">View Details</a>
           </div>
         </div>
 
+        <!-- M8 -->
         <div class="card">
-          <img src="m2.png" alt="BMW M2" />
+          <img src="m8.png" alt="BMW M8 Gran Coupé" />
           <div class="card-body">
-            <h3 class="card-title">BMW M2 Competition</h3>
-            <p class="card-text">2021 • 6 950 mi • £52 750</p>
-            <a class="btn" href="vehicle_details.html?car=m2">More Info</a>
+            <h3 class="card-title">BMW M8 Gran Coupé</h3>
+            <p class="card-text">2020 • 15 400 mi • £93 250</p>
+            <a class="btn" href="vehicle_details.html">View Details</a>
+          </div>
+        </div>
+
+        <!-- X6 M -->
+        <div class="card">
+          <img src="x6m.png" alt="BMW X6 M" />
+          <div class="card-body">
+            <h3 class="card-title">BMW X6 M</h3>
+            <p class="card-text">2022 • 9 300 mi • £77 600</p>
+            <a class="btn" href="vehicle_details.html">View Details</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     Contact us: <a href="mailto:info@bmwusedcars.co.uk">info@bmwusedcars.co.uk</a>
   </footer>
 
-  <!-- JS for mobile menu -->
   <script>
     document.getElementById('navToggle').onclick = () =>
       document.getElementById('navLinks').classList.toggle('show');
