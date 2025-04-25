@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BMW Approved Used Cars</title>
-
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -34,15 +33,6 @@
   <!-- MAIN CONTENT -->
   <main class="container">
 
-    <!-- Search 
-    <section>
-      <h2>Find Your BMW</h2>
-      <form class="search-bar">
-        <input type="text" placeholder="Model or keyword" />
-        <button class="btn">Search</button>
-      </form>
-    </section> -->
-
     <!-- Benefits -->
     <section>
       <h2>Why Choose BMW Approved Used?</h2>
@@ -65,36 +55,60 @@
     <!-- Cars -->
     <section>
       <h2>Featured BMWs</h2>
-      <div class="grid">
-        <!-- card 1 -->
-        <div class="card">
-          <img src="3-s.png" alt="BMW 3 Series" >
-          <div class="card-body">
-            <h3 class="card-title">BMW 3 Series</h3>
-            <p class="card-text">2019 • 20 000 mi • £25 000</p>
-            <a class="btn" href="vehicle_details.html">View Details</a>
+      <div class="carousel-wrapper">
+        <button class="carousel-control left" id="prevBtn">&#10094;</button>
+        <div class="carousel" id="carousel">
+          <!-- card 1 -->
+          <div class="card">
+            <img src="3-s.png" alt="BMW 3 Series">
+            <div class="card-body">
+              <h3 class="card-title">BMW 3 Series</h3>
+              <p class="card-text">2019 • 20,000 mi • £25,000</p>
+              <a class="btn" href="vehicle_details.html">View Details</a>
+            </div>
           </div>
-        </div>
 
-        <!-- card 2 -->
-        <div class="card">
-          <img src="x5.png" alt="BMW X5" />
-          <div class="card-body">
-            <h3 class="card-title">BMW X5</h3>
-            <p class="card-text">2021 • 8 500 mi • £46 750</p>
-            <a class="btn" href="vehicle_details.html">View Details</a>
+          <!-- card 2 -->
+          <div class="card">
+            <img src="x5.png" alt="BMW X5" />
+            <div class="card-body">
+              <h3 class="card-title">BMW X5</h3>
+              <p class="card-text">2021 • 8,500 mi • £46,750</p>
+              <a class="btn" href="vehicle_details.html">View Details</a>
+            </div>
           </div>
-        </div>
 
-        <!-- card 3 -->
-        <div class="card">
-          <img src="m42.png" alt="BMW M4 Competition" />
-          <div class="card-body">
-            <h3 class="card-title">BMW M4 Competition</h3>
-            <p class="card-text">2022 • 4 100 mi • £64 990</p>
-            <a class="btn" href="vehicle_details.html">View Details</a>
+          <!-- card 3 -->
+          <div class="card">
+            <img src="m42.png" alt="BMW M4 Competition" />
+            <div class="card-body">
+              <h3 class="card-title">BMW M4 Competition</h3>
+              <p class="card-text">2022 • 4,100 mi • £64,990</p>
+              <a class="btn" href="vehicle_details.html">View Details</a>
+            </div>
+          </div>
+
+          <!-- card 4 (New) -->
+          <div class="card">
+            <img src="m5.png" alt="BMW M5" />
+            <div class="card-body">
+              <h3 class="card-title">BMW M5</h3>
+              <p class="card-text">2020 • 10,500 mi • £52,500</p>
+              <a class="btn" href="vehicle_details.html">View Details</a>
+            </div>
+          </div>
+
+          <!-- card 5 (New) -->
+          <div class="card">
+            <img src="i8.png" alt="BMW i8" />
+            <div class="card-body">
+              <h3 class="card-title">BMW i8</h3>
+              <p class="card-text">2021 • 5,000 mi • £64,000</p>
+              <a class="btn" href="vehicle_details.html">View Details</a>
+            </div>
           </div>
         </div>
+        <button class="carousel-control right" id="nextBtn">&#10095;</button>
       </div>
     </section>
   </main>
@@ -104,10 +118,30 @@
     Contact us: <a href="mailto:info@bmwusedcars.co.uk">info@bmwusedcars.co.uk</a>
   </footer>
 
-  
   <script>
     document.getElementById('navToggle').onclick = () =>
       document.getElementById('navLinks').classList.toggle('show');
+
+    // Carousel Functionality
+    let currentIndex = 0;
+    const cards = document.querySelectorAll('.carousel .card');
+    const totalCards = cards.length;
+    
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalCards;
+      updateCarousel();
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+      updateCarousel();
+    });
+
+    function updateCarousel() {
+      const carousel = document.getElementById('carousel');
+      const cardWidth = cards[0].offsetWidth;
+      carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    }
   </script>
 </body>
 </html>
