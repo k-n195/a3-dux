@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BMW Approved Used Cars</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <img src="bm.jpg.jpg" alt="BMW logo" />
+      BMW Approved Used
+    </a>
+
+    <button class="toggle" id="navToggle">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="page2.html">Gallery</a>
+      <a href="page3.html">About Us</a>
+      <a href="https://usedcars.bmw.co.uk/" target="_blank">Models</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>BMW Approved Used Cars</h1>
+    <p>Luxury and performance you can trust</p>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <!-- Search 
+    <section>
+      <h2>Find Your BMW</h2>
+      <form class="search-bar">
+        <input type="text" placeholder="Model or keyword" />
+        <button class="btn">Search</button>
+      </form>
+    </section> -->
+
+    <!-- Benefits -->
+    <section>
+      <h2>Why Choose BMW Approved Used?</h2>
+      <ul class="bullets">
+        <li>12‑month unlimited‑mileage warranty</li>
+        <li>Verified vehicle history and mileage check</li>
+        <li>Rigorous technical inspection</li>
+        <li>Road‑tested by BMW technicians</li>
+        <li>Only genuine BMW parts used</li>
+      </ul>
+    </section>
+
+    <!-- Finance -->
+    <section>
+      <h2>Flexible Finance Options</h2>
+      <p>Plans to suit every budget.</p>
+      <a href="finance.html" class="btn btn-warning">Learn more</a>
+    </section>
+
+    <!-- Cars -->
+    <section>
+      <h2>Featured BMWs</h2>
+      <div class="grid">
+        <!-- card 1 -->
+        <div class="card">
+          <img src="3-s.png" alt="BMW 3 Series" >
+          <div class="card-body">
+            <h3 class="card-title">BMW 3 Series</h3>
+            <p class="card-text">2019 • 20 000 mi • £25 000</p>
+            <a class="btn" href="vehicle_details.html">View Details</a>
+          </div>
+        </div>
+
+        <!-- card 2 -->
+        <div class="card">
+          <img src="x5.png" alt="BMW X5" />
+          <div class="card-body">
+            <h3 class="card-title">BMW X5</h3>
+            <p class="card-text">2021 • 8 500 mi • £46 750</p>
+            <a class="btn" href="vehicle_details.html">View Details</a>
+          </div>
+        </div>
+
+        <!-- card 3 -->
+        <div class="card">
+          <img src="m42.png" alt="BMW M4 Competition" />
+          <div class="card-body">
+            <h3 class="card-title">BMW M4 Competition</h3>
+            <p class="card-text">2022 • 4 100 mi • £64 990</p>
+            <a class="btn" href="vehicle_details.html">View Details</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    Contact us: <a href="mailto:info@bmwusedcars.co.uk">info@bmwusedcars.co.uk</a>
+  </footer>
+
+  
+  <script>
+    document.getElementById('navToggle').onclick = () =>
+      document.getElementById('navLinks').classList.toggle('show');
+  </script>
+</body>
+</html>
