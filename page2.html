@@ -8,14 +8,18 @@
 </head>
 
 <body>
+  <!-- Navigation Bar Section -->
   <nav class="navbar">
+    <!-- The brand logo and link to the homepage -->
     <a href="index.html" class="brand">
       <img src="bm.jpg.jpg" alt="BMW logo" />
       BMW Approved Used
     </a>
 
+    <!-- Mobile navigation toggle button -->
     <button class="toggle" id="navToggle">☰</button>
 
+    <!-- Navigation links -->
     <div class="nav-links" id="navLinks">
       <a href="page2.html">Gallery</a>
       <a href="page3.html">About Us</a>
@@ -23,13 +27,17 @@
     </div>
   </nav>
 
+  <!-- Hero Section: The first section of the page -->
   <header class="hero">
+    <!-- Title and subtitle of the page -->
     <h1>BMW Gallery</h1>
     <p>High-performance vehicles for every enthusiast</p>
   </header>
 
   <main class="container">
+    <!-- Gallery Section: This section contains the car images and descriptions -->
     <section class="gallery">
+      <!-- Slider 1: Displays a set of cars with their images and descriptions -->
       <div class="slider">
         <div class="slide" onclick="openFullscreen('m2.jpg')">
           <img src="m2.jpg" alt="BMW M2 Coupe">
@@ -45,6 +53,7 @@
         </div>
       </div>
 
+      <!-- Slider 2: Displays another set of cars with their images and descriptions -->
       <div class="slider">
         <div class="slide" onclick="openFullscreen('m5.jpg')">
           <img src="m5.jpg" alt="BMW M5 CS">
@@ -62,26 +71,31 @@
     </section>
   </main>
 
-  <!-- Fullscreen Modal -->
+  <!-- Fullscreen Modal: This section is for showing a full-screen image when a car image is clicked -->
   <div id="modal" class="modal" onclick="closeFullscreen()">
     <img id="modalImg" class="modal-content" />
   </div>
 
+  <!-- Footer Section: Contact info section -->
   <footer class="footer">
+    <!-- Contact information with a link to email -->
     Contact us: <a href="mailto:info@bmwusedcars.co.uk">info@bmwusedcars.co.uk</a>
   </footer>
 
   <script>
+    // Toggle the visibility of the navigation menu when clicked (used for mobile view)
     document.getElementById('navToggle').onclick = () =>
       document.getElementById('navLinks').classList.toggle('show');
 
+    // Open the image in full screen when clicked
     function openFullscreen(imgSrc) {
-      document.getElementById('modal').style.display = 'flex';
-      document.getElementById('modalImg').src = imgSrc;
+      document.getElementById('modal').style.display = 'flex'; // Display the modal
+      document.getElementById('modalImg').src = imgSrc; // Set the image source to the clicked image
     }
 
+    // Close the full-screen modal when clicked outside the image
     function closeFullscreen() {
-      document.getElementById('modal').style.display = 'none';
+      document.getElementById('modal').style.display = 'none'; // Hide the modal
     }
   </script>
 </body>
