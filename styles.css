@@ -1,138 +1,191 @@
 /* ----------  Base colours ---------- */
 :root {
-  --navy: #0b1c34;
-  --bmw-blue: #1c62b9;
-  --silver: #e3e6eb;
-  --silver-light: #f5f7fa;
-  --text: #1b1b1b;
-  --white: #ffffff;
-  --accent: #ffb400;
+  /* Define the primary color palette for the website */
+  --navy: #0b1c34; /* Dark blue used for primary backgrounds and text */
+  --bmw-blue: #1c62b9; /* Lighter blue for links and highlights */
+  --silver: #e3e6eb; /* Light gray for background */
+  --silver-light: #f5f7fa; /* Very light gray for subtle backgrounds */
+  --text: #1b1b1b; /* Dark text color */
+  --white: #ffffff; /* White for text and backgrounds */
+  --accent: #ffb400; /* Bright yellow for accents */
 }
 
 /* ----------  Reset styles and typography ---------- */
 *, *::before, *::after {
+  /* Apply box-sizing border-box model for better layout control */
   box-sizing: border-box;
+  /* Remove default margin and padding for consistent styling */
   margin: 0;
   padding: 0;
 }
+
 body {
+  /* Use Helvetica Neue as primary font for clean typography */
   font-family: "Helvetica Neue", Arial, sans-serif;
+  /* Set comfortable line height for better readability */
   line-height: 1.55;
+  /* Light gray background color for body */
   background: var(--silver-light);
+  /* Set the default text color */
   color: var(--text);
-  padding-top: 110px;  /* Allow space for taller navbar */
+  /* Provide top padding to prevent content from being hidden behind the navbar */
+  padding-top: 110px;
 }
+
 h1, h2, h3 {
+  /* Make the headers bold and give them a dark blue color */
   font-weight: 700;
   color: var(--navy);
+  /* Add space below headers for visual separation */
   margin-bottom: .4rem;
 }
+
 a {
+  /* Style links with the BMW blue color */
   color: var(--bmw-blue);
-  text-decoration: none;
+  text-decoration: none; /* Remove underline */
+  /* Add a smooth color transition effect */
   transition: color .15s;
 }
+
 a:hover {
+  /* Change the link color to accent color on hover */
   color: var(--accent);
 }
 
 /* ----------  Navbar styles ---------- */
 .navbar {
+  /* Make the navbar fixed at the top with padding and rounded corners */
   position: fixed; top: 0; left: 0; z-index: 1000;
   width: auto; height: auto; margin: 25px; padding: 18px 32px;
   font-size: 1.4rem; font-weight: bold; border-radius: 48px;
+  /* Flexbox for navbar content layout */
   display: flex; flex-wrap: wrap; align-items: center; gap: 1rem;
   background: var(--navy); color: var(--white);
+  /* Add subtle box shadow for a floating effect */
   box-shadow: 0 2px 6px rgba(0, 0, 0, .25);
 }
+
 .brand {
+  /* Align the brand logo and text horizontally */
   display: flex; align-items: center; color: var(--white);
 }
+
 .brand img {
+  /* Set the size of the brand logo */
   width: 80px; height: auto; margin-right: 12px;
 }
+
 .toggle {
-  display: none; border: 2px solid var(--white); background: none; color: var(--white);
+  /* Hide the toggle button on larger screens */
+  display: none;
+  /* Style the toggle button with a border and no background */
+  border: 2px solid var(--white); background: none; color: var(--white);
   padding: 4px 8px; font-size: 1.2rem; cursor: pointer;
 }
+
 .nav-links {
+  /* Display the navigation links horizontally */
   display: flex; gap: 1.2rem;
 }
+
 .nav-links a {
+  /* Style navigation links with white color and adjust the font size */
   color: var(--white); font-size: 1rem;
 }
+
 .nav-links a:hover {
+  /* Change the color of links to accent on hover */
   color: var(--accent);
 }
 
 /* Mobile-specific navigation */
 @media (max-width: 680px) {
+  /* Show toggle button on small screens */
   .toggle { display: block; }
+  /* Initially hide the navigation links on small screens and stack them vertically */
   .nav-links {
     display: none; width: 100%; flex-direction: column; margin-top: .7rem;
   }
+  /* Show nav links when toggle is clicked */
   .nav-links.show { display: flex; }
+  /* Add padding to nav links for better clickability */
   .nav-links a { padding: .5rem 0; }
 }
 
 /* ----------  Hero section with faded background image ---------- */
 .hero {
-  background-image: url('m4co.jpg'); /* Add the correct image for hero */
-  background-size: cover; /* Ensure image covers section */
-  background-position: center; /* Center the image */
-  background-attachment: fixed; /* Fix background while scrolling */
+  /* Set a background image with specific positioning and fixed scroll effect */
+  background-image: url('m4co.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   position: relative;
+  /* Set text color to white for contrast */
   color: var(--white);
   text-align: center;
-  padding: 30rem 1rem; /* Adjust padding for design */
+  padding: 30rem 1rem; /* Add extra padding for the hero section */
 }
 
 .hero::before {
+  /* Add a dark overlay to enhance readability of the hero text */
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4); /* Dark overlay behind content */
-  z-index: -1; /* Keep overlay behind text */
+  background: rgba(0, 0, 0, 0.4); 
+  z-index: -1; /* Keep the overlay behind text */
 }
 
 .hero h1 {
+  /* Style the main headline with large, bold font and a background for readability */
   font-size: 3rem;
   margin-bottom: .5rem;
   padding: 1rem 2rem;
   background: rgba(0, 0, 0, 0.6);
   display: inline-block;
   border-radius: 8px;
-  color: white; /* White text for readability */
+  color: white;
 }
 
 .hero p {
+  /* Set a larger font size for the paragraph text */
   font-size: 1.5rem;
 }
 
 /* ----------  General layout ---------- */
 .container {
+  /* Create a centered container with a maximum width */
   max-width: 960px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
-section { margin-bottom: 2rem; }
+
+section { 
+  /* Add space between sections for a clean layout */
+  margin-bottom: 2rem; 
+}
 
 /* ----------  Search bar styles ---------- */
 .search-bar {
+  /* Use flexbox for arranging the search bar elements */
   display: flex;
   gap: .5rem;
   flex-wrap: wrap;
 }
+
 .search-bar input {
+  /* Style the search input field */
   flex: 1 1 220px;
   padding: .5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
 .btn {
+  /* Style buttons with a background and rounded edges */
   background: var(--bmw-blue);
   color: var(--white);
   border: none;
@@ -140,28 +193,39 @@ section { margin-bottom: 2rem; }
   cursor: pointer;
   border-radius: 4px;
 }
+
 .btn:hover {
+  /* Change the button color on hover */
   background: #154c8d;
 }
+
 .btn-warning {
+  /* Style warning buttons with accent color */
   background: var(--accent);
   color: #000;
 }
+
 .btn-warning:hover {
+  /* Change warning button color on hover */
   background: #d99b00;
 }
 
 /* ----------  Styled bullet list for benefits ---------- */
 .bullets {
+  /* Remove default list styling */
   list-style: none;
   margin-top: .8rem;
 }
+
 .bullets li {
+  /* Add some space and padding to the list items */
   margin-bottom: .4rem;
   padding-left: 1.3rem;
   position: relative;
 }
+
 .bullets li::before {
+  /* Add a checkmark before each bullet item */
   content: "✓";
   position: absolute;
   left: 0;
@@ -170,25 +234,29 @@ section { margin-bottom: 2rem; }
 
 /* ----------  Carousel (Featured Cars) ---------- */
 .carousel-wrapper {
+  /* Ensure the carousel container is positioned correctly and hides overflow */
   position: relative;
   overflow: hidden;
   margin: 1.5rem 0;
 }
 
 .carousel {
+  /* Use flexbox for the carousel layout with smooth transitions */
   display: flex;
   gap: 1rem;
   transition: transform 0.3s ease-in-out;
 }
 
 .carousel .card {
-  flex: 0 0 80%; /* Adjusted to fit cards within carousel */
-  margin: 0 auto; /* Center the cards */
+  /* Adjust card width and center them within the carousel */
+  flex: 0 0 80%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
 }
 
 .carousel .card img {
+  /* Ensure images are responsive and contain within the card */
   width: 100%;
   height: auto;
   max-height: 180px;
@@ -196,6 +264,7 @@ section { margin-bottom: 2rem; }
 }
 
 .carousel-control {
+  /* Style the carousel control buttons */
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -208,15 +277,18 @@ section { margin-bottom: 2rem; }
 }
 
 .carousel-control.left {
+  /* Position left control button */
   left: 10px;
 }
 
 .carousel-control.right {
+  /* Position right control button */
   right: 10px;
 }
 
 /* Styling for individual car cards */
 .card {
+  /* Style the individual cards with a white background and shadow */
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
@@ -227,11 +299,13 @@ section { margin-bottom: 2rem; }
 }
 
 .card:hover {
+  /* Add hover effect for the cards */
   transform: translateY(-4px);
   box-shadow: 0 8px 18px rgba(0, 0, 0, .12);
 }
 
 .card-body {
+  /* Flexbox layout for card body content */
   padding: .9rem;
   display: flex;
   flex-direction: column;
@@ -239,17 +313,20 @@ section { margin-bottom: 2rem; }
 }
 
 .card-title {
+  /* Style the title of each car card */
   font-size: 1.05rem;
   margin-bottom: .4rem;
 }
 
 .card-text {
+  /* Style the text inside the card */
   font-size: .9rem;
   margin-bottom: auto;
 }
 
 /* ----------  Footer section ---------- */
 .footer {
+  /* Style the footer with a dark background and white text */
   background: var(--navy);
   color: var(--white);
   text-align: center;
@@ -258,10 +335,12 @@ section { margin-bottom: 2rem; }
 }
 
 .footer a {
+  /* Style footer links with accent color */
   color: var(--accent);
 }
 
 .footer a:hover {
+  /* Underline footer links on hover */
   text-decoration: underline;
 }
 
@@ -269,32 +348,42 @@ section { margin-bottom: 2rem; }
 
 /* ----------  Small phones: 0–479px ---------- */
 @media (max-width: 479px) {
+  /* Adjust navbar for small screens */
   .navbar {
     margin: 10px;
     padding: 12px 20px;
     font-size: 1.1rem;
   }
+
   .brand img {
+    /* Resize brand logo */
     width: 60px;
     margin-right: 8px;
   }
+
   body {
+    /* Adjust top padding for smaller screens */
     padding-top: 88px;
   }
 
   .grid {
+    /* Stack grid elements */
     grid-template-columns: 1fr;
   }
+
   .carousel-wrapper {
+    /* Adjust carousel width for small screens */
     width: 100%;
   }
 
   .carousel .card {
+    /* Adjust card width for small screens */
     width: 80%;
     margin: 0 auto;
   }
 
   .carousel .card img {
+    /* Resize images within cards */
     max-height: 150px;
   }
 }
@@ -302,15 +391,18 @@ section { margin-bottom: 2rem; }
 /* ----------  Large phones and tablets: 480–899px ---------- */
 @media (min-width: 480px) and (max-width: 899px) {
   .carousel-wrapper {
+    /* Adjust carousel width for larger phones */
     width: 100%;
   }
 
   .carousel .card {
+    /* Adjust card width for larger phones */
     width: 90%;
     margin: 0 auto;
   }
 
   .carousel .card img {
+    /* Adjust image sizes in the carousel */
     max-height: 180px;
   }
 }
@@ -318,6 +410,7 @@ section { margin-bottom: 2rem; }
 /* ----------  Desktops and laptops: 900px+ ---------- */
 @media (min-width: 900px) {
   .carousel .card img {
+    /* Ensure consistent image size on larger screens */
     max-height: 180px;
   }
 }

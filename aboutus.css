@@ -1,0 +1,244 @@
+/* ----------  Base palette ---------- */
+:root {
+    --navy: #0b1c34;
+    --bmw-blue: #1c62b9;
+    --silver: #e3e6eb;
+    --silver-light: #f5f7fa;
+    --text: #1b1b1b;
+    --white: #ffffff;
+    --accent: #ffb400;
+  }
+  
+  /* ----------  Resets & typography ---------- */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.55;
+    background: var(--silver-light);
+    color: var(--text);
+    padding-top: 110px;  /* taller offset for bigger navbar */
+  }
+  
+  h1, h2, h3 {
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: .4rem;
+  }
+  
+  a {
+    color: var(--bmw-blue);
+    text-decoration: none;
+    transition: color .15s;
+  }
+  
+  a:hover {
+    color: var(--accent);
+  }
+  
+  /* ----------  Navbar ---------- */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: auto;
+    height: auto;
+    margin: 25px;
+    padding: 18px 32px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    background: var(--navy);
+    color: var(--white);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .25);
+  }
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    color: var(--white);
+  }
+  
+  .brand img {
+    width: 80px;
+    height: auto;
+    margin-right: 12px;
+  }
+  
+  .toggle {
+    display: none;
+    border: 2px solid var(--white);
+    background: none;
+    color: var(--white);
+    padding: 4px 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1.2rem;
+  }
+  
+  .nav-links a {
+    color: var(--white);
+    font-size: 1rem;
+  }
+  
+  .nav-links a:hover {
+    color: var(--accent);
+  }
+  
+  /* mobile nav */
+  @media (max-width: 680px) {
+    .toggle {
+      display: block;
+    }
+    .nav-links {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      margin-top: .7rem;
+    }
+    .nav-links.show {
+      display: flex;
+    }
+    .nav-links a {
+      padding: .5rem 0;
+    }
+  }
+  
+  /* ----------  Hero Section with Faded Background Image ---------- */
+  .hero {
+    background-image: url('m3r.jpg');
+    background-size: contain; /* Ensures the image covers the section while maintaining aspect ratio */
+    background-position: center; /* Centers the image, displaying the middle part */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    position: relative;
+    color: var(--white);
+    text-align: center;
+    padding: 30rem 1rem; /* Adjust padding to suit your design */
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay with 40% opacity */
+    z-index: -1; /* Keeps the overlay behind the content */
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: .5rem;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    border-radius: 8px;
+    color: white; /* Ensures the text is white */
+  }
+  
+  .hero p {
+    font-size: 1.5rem;
+  }
+  
+  /* ----------  Layout ---------- */
+  .container {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  section {
+    margin-bottom: 2rem;
+  }
+  
+  /* ----------  Footer ---------- */
+  .footer {
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    font-size: .9rem;
+  }
+  
+  .footer a {
+    color: var(--accent);
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* =========================================================
+     RESPONSIVE TWEAKS
+     ========================================================= */
+  
+  /* ----------  0 – 479 px : small phones ---------- */
+  @media (max-width: 479px) {
+    .navbar {
+      margin: 10px;
+      padding: 12px 20px;
+      font-size: 1.1rem;
+    }
+    .brand img {
+      width: 60px;
+      margin-right: 8px;
+    }
+    body {
+      padding-top: 88px;
+    }
+  
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .carousel-wrapper {
+      width: 100%;
+    }
+  
+    .carousel .card {
+      width: 80%;
+      margin: 0 auto;
+    }
+  
+    .carousel .card img {
+      max-height: 150px;
+    }
+  }
+  
+  /* ----------  480 – 899 px : large phones & tablets ---------- */
+  @media (min-width: 480px) and (max-width: 899px) {
+    .carousel-wrapper {
+      width: 100%;
+    }
+  
+    .carousel .card {
+      width: 90%;
+      margin: 0 auto;
+    }
+  
+    .carousel .card img {
+      max-height: 180px;
+    }
+  }
+  
+  /* ----------  900 px + : laptops & desktops ---------- */
+  @media (min-width: 900px) {
+    .carousel .card img {
+      max-height: 180px;
+    }
+  }
+  
