@@ -11,12 +11,15 @@
   <nav class="navbar">
     <a href="index.html" class="brand">
       <img src="bm.jpg.jpg" alt="BMW logo" />
-      BMW M Series
+      BMW Approved Used
     </a>
+
     <button class="toggle" id="navToggle">☰</button>
+
     <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="gallery.html">Gallery</a>
+      <a href="page2.html">Gallery</a>
+      <a href="page3.html">About Us</a>
+      <a href="https://usedcars.bmw.co.uk/" target="_blank">Models</a>
     </div>
   </nav>
 
@@ -26,70 +29,37 @@
   </header>
 
   <main class="container">
-    <section>
-      <div class="grid">
-        <!-- M2 -->
-        <div class="card">
-          <img src="m2.png" alt="BMW M2 Coupe" />
-          <div class="card-body">
-            <h3 class="card-title">BMW M2 Coupe</h3>
-            <p class="card-text">2021 • 10 200 mi • £38 500</p>
-            <a class="btn" href="vehicle_details.html">View Details</a>
-          </div>
+    <section class="gallery">
+      <div class="slider">
+        <div class="slide" onclick="openFullscreen('m2.png')">
+          <img src="m2.png" alt="BMW M2 Coupe">
         </div>
-
-        <!-- M3 -->
-        <div class="card">
-          <img src="m3.png" alt="BMW M3 Competition" />
-          <div class="card-body">
-            <h3 class="card-title">BMW M3 Competition</h3>
-            <p class="card-text">2023 • 5 800 mi • £67 000</p>
-            <a class="btn" href="vehicle_details.html">View Details</a>
-          </div>
+        <div class="slide" onclick="openFullscreen('m3.png')">
+          <img src="m3.png" alt="BMW M3 Competition">
         </div>
-
-        <!-- M4 -->
-        <div class="card">
-          <img src="m4.png" alt="BMW M4 Convertible" />
-          <div class="card-body">
-            <h3 class="card-title">BMW M4 Convertible</h3>
-            <p class="card-text">2022 • 7 100 mi • £72 950</p>
-            <a class="btn" href="vehicle_details.html">View Details</a>
-          </div>
+        <div class="slide" onclick="openFullscreen('m4.png')">
+          <img src="m4.png" alt="BMW M4 Convertible">
         </div>
+      </div>
 
-        <!-- M5 -->
-        <div class="card">
-          <img src="m5cs.png" alt="BMW M5 CS" />
-          <div class="card-body">
-            <h3 class="card-title">BMW M5 CS</h3>
-            <p class="card-text">2021 • 12 500 mi • £89 990</p>
-            <a class="btn" href="vehicle_details.html">View Details</a>
-          </div>
+      <div class="slider">
+        <div class="slide" onclick="openFullscreen('m5cs.png')">
+          <img src="m5cs.png" alt="BMW M5 CS">
         </div>
-
-        <!-- M8 -->
-        <div class="card">
-          <img src="m8.png" alt="BMW M8 Gran Coupé" />
-          <div class="card-body">
-            <h3 class="card-title">BMW M8 Gran Coupé</h3>
-            <p class="card-text">2020 • 15 400 mi • £93 250</p>
-            <a class="btn" href="vehicle_details.html">View Details</a>
-          </div>
+        <div class="slide" onclick="openFullscreen('m8.png')">
+          <img src="m8.png" alt="BMW M8 Gran Coupé">
         </div>
-
-        <!-- X6 M -->
-        <div class="card">
-          <img src="x6m.png" alt="BMW X6 M" />
-          <div class="card-body">
-            <h3 class="card-title">BMW X6 M</h3>
-            <p class="card-text">2022 • 9 300 mi • £77 600</p>
-            <a class="btn" href="vehicle_details.html">View Details</a>
-          </div>
+        <div class="slide" onclick="openFullscreen('x6m.png')">
+          <img src="x6m.png" alt="BMW X6 M">
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Fullscreen Modal -->
+  <div id="modal" class="modal" onclick="closeFullscreen()">
+    <img id="modalImg" class="modal-content" />
+  </div>
 
   <footer class="footer">
     Contact us: <a href="mailto:info@bmwusedcars.co.uk">info@bmwusedcars.co.uk</a>
@@ -98,6 +68,15 @@
   <script>
     document.getElementById('navToggle').onclick = () =>
       document.getElementById('navLinks').classList.toggle('show');
+
+    function openFullscreen(imgSrc) {
+      document.getElementById('modal').style.display = 'flex';
+      document.getElementById('modalImg').src = imgSrc;
+    }
+
+    function closeFullscreen() {
+      document.getElementById('modal').style.display = 'none';
+    }
   </script>
 </body>
 </html>
