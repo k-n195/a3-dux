@@ -1,5 +1,5 @@
-/* ----------  Base palette ---------- */
-:root{
+/* ----------  Base colours ---------- */
+:root {
   --navy: #0b1c34;
   --bmw-blue: #1c62b9;
   --silver: #e3e6eb;
@@ -9,7 +9,7 @@
   --accent: #ffb400;
 }
 
-/* ----------  Resets & typography ---------- */
+/* ----------  Reset styles and typography ---------- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -20,7 +20,7 @@ body {
   line-height: 1.55;
   background: var(--silver-light);
   color: var(--text);
-  padding-top: 110px;  /* taller offset for bigger navbar */
+  padding-top: 110px;  /* Allow space for taller navbar */
 }
 h1, h2, h3 {
   font-weight: 700;
@@ -36,7 +36,7 @@ a:hover {
   color: var(--accent);
 }
 
-/* ----------  Navbar ---------- */
+/* ----------  Navbar styles ---------- */
 .navbar {
   position: fixed; top: 0; left: 0; z-index: 1000;
   width: auto; height: auto; margin: 25px; padding: 18px 32px;
@@ -65,7 +65,7 @@ a:hover {
   color: var(--accent);
 }
 
-/* mobile nav */
+/* Mobile-specific navigation */
 @media (max-width: 680px) {
   .toggle { display: block; }
   .nav-links {
@@ -75,16 +75,16 @@ a:hover {
   .nav-links a { padding: .5rem 0; }
 }
 
-/* ----------  Hero Section with Faded Background Image ---------- */
+/* ----------  Hero section with faded background image ---------- */
 .hero {
-  background-image: url('m4co.jpg'); /* Replace 'your-image.jpg' with your image */
-  background-size: cover; /* Ensures the image covers the section while maintaining aspect ratio */
-  background-position: center; /* Centers the image, displaying the middle part */
-  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+  background-image: url('m4co.jpg'); /* Add the correct image for hero */
+  background-size: cover; /* Ensure image covers section */
+  background-position: center; /* Center the image */
+  background-attachment: fixed; /* Fix background while scrolling */
   position: relative;
   color: var(--white);
   text-align: center;
-  padding: 30rem 1rem; /* Adjust padding to suit your design */
+  padding: 30rem 1rem; /* Adjust padding for design */
 }
 
 .hero::before {
@@ -94,8 +94,8 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4); /* Dark overlay with 40% opacity */
-  z-index: -1; /* Keeps the overlay behind the content */
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay behind content */
+  z-index: -1; /* Keep overlay behind text */
 }
 
 .hero h1 {
@@ -105,13 +105,14 @@ a:hover {
   background: rgba(0, 0, 0, 0.6);
   display: inline-block;
   border-radius: 8px;
-  color: white; /* Ensures the text is white */
+  color: white; /* White text for readability */
 }
 
 .hero p {
   font-size: 1.5rem;
 }
-/* ----------  Layout ---------- */
+
+/* ----------  General layout ---------- */
 .container {
   max-width: 960px;
   margin: 2rem auto;
@@ -119,7 +120,7 @@ a:hover {
 }
 section { margin-bottom: 2rem; }
 
-/* ----------  Search bar ---------- */
+/* ----------  Search bar styles ---------- */
 .search-bar {
   display: flex;
   gap: .5rem;
@@ -150,7 +151,7 @@ section { margin-bottom: 2rem; }
   background: #d99b00;
 }
 
-/* ----------  Bullet list ---------- */
+/* ----------  Styled bullet list for benefits ---------- */
 .bullets {
   list-style: none;
   margin-top: .8rem;
@@ -167,7 +168,7 @@ section { margin-bottom: 2rem; }
   color: var(--accent);
 }
 
-/* ----------  Carousel ---------- */
+/* ----------  Carousel (Featured Cars) ---------- */
 .carousel-wrapper {
   position: relative;
   overflow: hidden;
@@ -181,8 +182,10 @@ section { margin-bottom: 2rem; }
 }
 
 .carousel .card {
-  flex: 0 0 auto;
-  width: 100%;
+  flex: 0 0 80%; /* Adjusted to fit cards within carousel */
+  margin: 0 auto; /* Center the cards */
+  display: flex;
+  justify-content: center;
 }
 
 .carousel .card img {
@@ -212,7 +215,7 @@ section { margin-bottom: 2rem; }
   right: 10px;
 }
 
-/* cards */
+/* Styling for individual car cards */
 .card {
   background: #fff;
   border-radius: 8px;
@@ -245,7 +248,7 @@ section { margin-bottom: 2rem; }
   margin-bottom: auto;
 }
 
-/* ----------  Footer ---------- */
+/* ----------  Footer section ---------- */
 .footer {
   background: var(--navy);
   color: var(--white);
@@ -262,11 +265,9 @@ section { margin-bottom: 2rem; }
   text-decoration: underline;
 }
 
-/* =========================================================
-   RESPONSIVE TWEAKS
-   ========================================================= */
+/* RESPONSIVE STYLES */
 
-/* ----------  0 – 479 px : small phones ---------- */
+/* ----------  Small phones: 0–479px ---------- */
 @media (max-width: 479px) {
   .navbar {
     margin: 10px;
@@ -298,7 +299,7 @@ section { margin-bottom: 2rem; }
   }
 }
 
-/* ----------  480 – 899 px : large phones & tablets ---------- */
+/* ----------  Large phones and tablets: 480–899px ---------- */
 @media (min-width: 480px) and (max-width: 899px) {
   .carousel-wrapper {
     width: 100%;
@@ -314,7 +315,7 @@ section { margin-bottom: 2rem; }
   }
 }
 
-/* ----------  900 px + : laptops & desktops ---------- */
+/* ----------  Desktops and laptops: 900px+ ---------- */
 @media (min-width: 900px) {
   .carousel .card img {
     max-height: 180px;
