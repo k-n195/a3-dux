@@ -1,344 +1,331 @@
 /* ----------  Base palette ---------- */
 :root {
-    --navy: #0b1c34;
-    --bmw-blue: #1c62b9;
-    --silver: #e3e6eb;
-    --silver-light: #f5f7fa;
-    --text: #1b1b1b;
-    --white: #ffffff;
-    --accent: #ffb400;
-  }
-  
-  /* ----------  Resets & typography ---------- */
-  *, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.55;
-    background: var(--silver-light);
-    color: var(--text);
-    padding-top: 110px;
-  }
-  
-  h1, h2, h3 {
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: .4rem;
-  }
-  
-  a {
-    color: var(--bmw-blue);
-    text-decoration: none;
-    transition: color .15s;
-  }
-  
-  a:hover {
-    color: var(--accent);
-  }
-  
-  /* ----------  Navbar ---------- */
-  .navbar {
-    position: fixed;
-    top: 0; left: 0;
-    z-index: 1000;
-    margin: 25px;
-    padding: 18px 32px;
-    font-size: 1.4rem;
-    font-weight: bold;
-    border-radius: 48px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1rem;
-    background: var(--navy);
-    color: var(--white);
-    box-shadow: 0 2px 6px rgba(0,0,0,.25);
-  }
-  
-  .brand {
-    display: flex;
-    align-items: center;
-    color: var(--white);
-  }
-  
-  .brand img {
-    width: 80px;
-    height: auto;
-    margin-right: 12px;
-  }
-  
+  --navy: #0b1c34;
+  --bmw-blue: #1c62b9;
+  --silver: #e3e6eb;
+  --silver-light: #f5f7fa;
+  --text: #1b1b1b;
+  --white: #ffffff;
+  --accent: #ffb400;
+}
+
+/* ----------  Resets & typography ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.55;
+  background: var(--silver-light);
+  color: var(--text);
+  padding-top: 110px;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: .4rem;
+}
+
+a {
+  color: var(--bmw-blue);
+  text-decoration: none;
+  transition: color .15s;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* ----------  Navbar ---------- */
+.navbar {
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 1000;
+  margin: 25px;
+  padding: 18px 32px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-radius: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  background: var(--navy);
+  color: var(--white);
+  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  color: var(--white);
+}
+
+.brand img {
+  width: 80px;
+  height: auto;
+  margin-right: 12px;
+}
+
+.toggle {
+  display: none;
+  border: 2px solid var(--white);
+  background: none;
+  color: var(--white);
+  padding: 4px 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-links a {
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 680px) {
   .toggle {
-    display: none;
-    border: 2px solid var(--white);
-    background: none;
-    color: var(--white);
-    padding: 4px 8px;
-    font-size: 1.2rem;
-    cursor: pointer;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 1.2rem;
-  }
-  
-  .nav-links a {
-    color: var(--white);
-    font-size: 1rem;
-  }
-  
-  .nav-links a:hover {
-    color: var(--accent);
-  }
-  
-  @media (max-width: 680px) {
-    .toggle {
       display: block;
-    }
-    .nav-links {
+  }
+  .nav-links {
       display: none;
       width: 100%;
       flex-direction: column;
       margin-top: .7rem;
-    }
-    .nav-links.show {
+  }
+  .nav-links.show {
       display: flex;
-    }
-    .nav-links a {
+  }
+  .nav-links a {
       padding: .5rem 0;
-    }
   }
-  
-  /* ----------  Hero ---------- */
-  .hero {
-    background: var(--navy);
-    color: var(--white);
-    text-align: center;
-    padding: 2rem 1rem;
-  }
-  
-  .hero h1 {
-    font-size: 1.6rem;
-    margin-bottom: .3rem;
-  }
-  
-  /* ----------  Layout ---------- */
-  .container {
-    max-width: 960px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
-  
-  section {
-    margin-bottom: 2rem;
-  }
-  
-  /* ----------  Cards grid ---------- */
-  .grid {
-    display: grid;
-    gap: 1rem;
-  }
-  
-  @media (min-width: 600px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (min-width: 900px) {
-    .grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  
-  .card {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,.08);
-    display: flex;
-    flex-direction: column;
-    transition: transform .15s, box-shadow .15s;
-  }
-  
-  .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 18px rgba(0,0,0,.12);
-  }
-  
-  .card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  @media (min-width: 900px) {
-    .card img {
-      height: 220px;
-    }
-  }
-  
-  .card-body {
-    padding: .9rem;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-  
-  .card-title {
-    font-size: 1.05rem;
-    margin-bottom: .4rem;
-  }
-  
-  .card-text {
-    font-size: .9rem;
-    margin-bottom: auto;
-  }
-  
-  /* ----------  Footer ---------- */
-  .footer {
-    background: var(--navy);
-    color: var(--white);
-    text-align: center;
-    padding: 1rem;
-    font-size: .9rem;
-  }
-  
-  .footer a {
-    color: var(--accent);
-  }
-  
-  .footer a:hover {
-    text-decoration: underline;
-  }
-  
-  /* =========================================================
-     RESPONSIVE TWEAKS
-     ========================================================= */
-  
-  /* ----------  Small phones ---------- */
-  @media (max-width: 479px) {
-    .navbar {
-      margin: 10px;
-      padding: 12px 20px;
-      font-size: 1.1rem;
-    }
-    .brand img {
-      width: 60px;
-      margin-right: 8px;
-    }
-    body {
-      padding-top: 88px;
-    }
-    .grid {
-      grid-template-columns: 1fr;
-    }
-  }
-  
-  /* ----------  Tablets ---------- */
-  @media (min-width: 480px) and (max-width: 899px) {
-    .navbar {
-      margin: 18px;
-      padding: 14px 26px;
-      font-size: 1.25rem;
-    }
-    .brand img {
-      width: 70px;
-    }
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+}
 
-  /* ----------  Gallery sliders ---------- */
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
+/* ----------  Hero ---------- */
+.hero {
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
   padding: 2rem 1rem;
 }
 
-.slider {
-  display: flex;
-  overflow-x: auto;
+.hero h1 {
+  font-size: 1.6rem;
+  margin-bottom: .3rem;
+}
+
+/* ----------  Layout ---------- */
+.container {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+/* ----------  Cards grid ---------- */
+.grid {
+  display: grid;
   gap: 1rem;
-  padding-bottom: 1rem;
-  width: 45%;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
 }
 
-.slider::-webkit-scrollbar {
-  height: 8px;
+@media (min-width: 600px) {
+  .grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.slider::-webkit-scrollbar-thumb {
-  background: var(--silver);
-  border-radius: 4px;
+@media (min-width: 900px) {
+  .grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform .15s, box-shadow .15s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+@media (min-width: 900px) {
+  .card img {
+      height: 220px;
+  }
+}
+
+.card-body {
+  padding: .9rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  margin-bottom: .4rem;
+}
+
+.card-text {
+  font-size: .9rem;
+  margin-bottom: auto;
+}
+
+/* ----------  Footer ---------- */
+.footer {
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  font-size: .9rem;
+}
+
+.footer a {
+  color: var(--accent);
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+ RESPONSIVE TWEAKS
+ ========================================================= */
+
+/* ----------  Small phones ---------- */
+@media (max-width: 479px) {
+  .navbar {
+      margin: 10px;
+      padding: 12px 20px;
+      font-size: 1.1rem;
+  }
+  .brand img {
+      width: 60px;
+      margin-right: 8px;
+  }
+  body {
+      padding-top: 88px;
+  }
+  .grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* ----------  Tablets ---------- */
+@media (min-width: 480px) and (max-width: 899px) {
+  .navbar {
+      margin: 18px;
+      padding: 14px 26px;
+      font-size: 1.25rem;
+  }
+  .brand img {
+      width: 70px;
+  }
+  .grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ----------  Gallery sliders ---------- */
+.gallery {
+display: flex;
+flex-direction: column; /* Stack sliders vertically */
+gap: 2rem;
+justify-content: center;
+padding: 2rem 1rem;
+}
+
+.slider {
+display: flex;
+flex-direction: column; /* Make the sliders stack vertically */
+overflow-x: hidden; /* Prevent horizontal scrolling */
+gap: 1rem;
+padding-bottom: 1rem;
+width: 100%;
 }
 
 .slide {
-  flex: 0 0 auto;
-  width: 240px;
-  cursor: pointer;
-  scroll-snap-align: start;
+flex: 0 0 auto;
+width: 100%; /* Allow images to take full width */
+cursor: pointer;
 }
 
 .slide img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform .3s ease;
+width: 100%;
+height: auto;
+border-radius: 12px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+transition: transform .3s ease;
 }
 
 .slide img:hover {
-  transform: scale(1.05);
+transform: scale(1.05);
 }
 
 /* ----------  Fullscreen modal ---------- */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(11, 28, 52, 0.9); /* use var(--navy) transparent */
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+display: none;
+position: fixed;
+z-index: 2000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background: rgba(11, 28, 52, 0.9); /* use var(--navy) transparent */
+align-items: center;
+justify-content: center;
+cursor: pointer;
 }
 
 .modal-content {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+max-width: 90%;
+max-height: 90%;
+object-fit: contain;
+border-radius: 8px;
+box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
 .modal-close {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  font-size: 2.5rem;
-  color: var(--white);
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-weight: bold;
-  z-index: 2100;
+position: absolute;
+top: 30px;
+right: 40px;
+font-size: 2.5rem;
+color: var(--white);
+cursor: pointer;
+background: none;
+border: none;
+font-weight: bold;
+z-index: 2100;
 }
 
 .modal-close:hover {
-  color: var(--accent);
+color: var(--accent);
 }
-
-  
