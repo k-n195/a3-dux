@@ -1,135 +1,135 @@
 /* ----------  Base palette ---------- */
 :root {
-    --navy: #0b1c34;
-    --bmw-blue: #1c62b9;
-    --silver: #e3e6eb;
-    --silver-light: #f5f7fa;
-    --text: #1b1b1b;
-    --white: #ffffff;
-    --accent: #ffb400;
-  }
-  
-  /* ----------  Resets & typography ---------- */
-  *, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.55;
-    background: var(--silver-light);
-    color: var(--text);
-    padding-top: 110px;  /* taller offset for bigger navbar */
-  }
-  
-  h1, h2, h3 {
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: .4rem;
-  }
-  
-  a {
-    color: var(--bmw-blue);
-    text-decoration: none;
-    transition: color .15s;
-  }
-  
-  a:hover {
-    color: var(--accent);
-  }
-  
-  /* ----------  Navbar ---------- */
-  .navbar {
-    position: fixed;
+    --navy: #0b1c34; /* Primary dark blue color for the navbar and footer */
+    --bmw-blue: #1c62b9; /* BMW blue color for links */
+    --silver: #e3e6eb; /* Light silver color for backgrounds */
+    --silver-light: #f5f7fa; /* Lighter silver for background */
+    --text: #1b1b1b; /* Dark gray for text */
+    --white: #ffffff; /* White color for text and elements */
+    --accent: #ffb400; /* Accent color for hover effects */
+}
+
+/* ----------  Resets & typography ---------- */
+*, *::before, *::after {
+    box-sizing: border-box; /* Ensures elements are sized consistently */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif; /* Setting font for the body */
+    line-height: 1.55; /* Line height for better readability */
+    background: var(--silver-light); /* Light silver background color */
+    color: var(--text); /* Dark gray text color */
+    padding-top: 110px;  /* Taller offset for bigger navbar */
+}
+
+h1, h2, h3 {
+    font-weight: 700; /* Bold headers */
+    color: var(--navy); /* Dark blue for headers */
+    margin-bottom: .4rem; /* Space below headers */
+}
+
+a {
+    color: var(--bmw-blue); /* Blue links */
+    text-decoration: none; /* Removes underline from links */
+    transition: color .15s; /* Smooth transition for color change */
+}
+
+a:hover {
+    color: var(--accent); /* Accent color on hover */
+}
+
+/* ----------  Navbar ---------- */
+.navbar {
+    position: fixed; /* Keeps the navbar fixed at the top */
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 1000; /* Ensures navbar stays on top of other elements */
     width: auto;
     height: auto;
     margin: 25px;
     padding: 18px 32px;
-    font-size: 1.4rem;
+    font-size: 1.4rem; /* Font size for navbar items */
     font-weight: bold;
-    border-radius: 48px;
+    border-radius: 48px; /* Rounded corners for navbar */
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allows items to wrap if necessary */
     align-items: center;
     gap: 1rem;
-    background: var(--navy);
-    color: var(--white);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .25);
-  }
-  
-  .brand {
+    background: var(--navy); /* Dark blue background */
+    color: var(--white); /* White text */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .25); /* Subtle shadow for depth */
+}
+
+.brand {
     display: flex;
     align-items: center;
-    color: var(--white);
-  }
-  
-  .brand img {
-    width: 80px;
+    color: var(--white); /* White text for brand */
+}
+
+.brand img {
+    width: 80px; /* Logo width */
     height: auto;
-    margin-right: 12px;
-  }
-  
-  .toggle {
-    display: none;
-    border: 2px solid var(--white);
+    margin-right: 12px; /* Space between logo and text */
+}
+
+.toggle {
+    display: none; /* Hide toggle button on larger screens */
+    border: 2px solid var(--white); /* Border around toggle button */
     background: none;
-    color: var(--white);
+    color: var(--white); /* White color for toggle button */
     padding: 4px 8px;
     font-size: 1.2rem;
-    cursor: pointer;
-  }
-  
-  .nav-links {
-    display: flex;
+    cursor: pointer; /* Cursor pointer on hover */
+}
+
+.nav-links {
+    display: flex; /* Display nav links in a row */
     gap: 1.2rem;
-  }
-  
-  .nav-links a {
-    color: var(--white);
-    font-size: 1rem;
-  }
-  
-  .nav-links a:hover {
-    color: var(--accent);
-  }
-  
-  /* mobile nav */
-  @media (max-width: 680px) {
+}
+
+.nav-links a {
+    color: var(--white); /* White text for nav links */
+    font-size: 1rem; /* Font size for nav links */
+}
+
+.nav-links a:hover {
+    color: var(--accent); /* Accent color on hover */
+}
+
+/* mobile nav */
+@media (max-width: 680px) {
     .toggle {
-      display: block;
+        display: block; /* Show the toggle button on small screens */
     }
     .nav-links {
-      display: none;
-      width: 100%;
-      flex-direction: column;
-      margin-top: .7rem;
+        display: none; /* Hide nav links by default on small screens */
+        width: 100%;
+        flex-direction: column; /* Stack the links vertically */
+        margin-top: .7rem;
     }
     .nav-links.show {
-      display: flex;
+        display: flex; /* Show the nav links when toggled */
     }
     .nav-links a {
-      padding: .5rem 0;
+        padding: .5rem 0; /* Space between mobile links */
     }
-  }
-  
-  /* ----------  Hero Section with Faded Background Image ---------- */
-  .hero {
-    background-image: url('m3r.jpg');
+}
+
+/* ----------  Hero Section with Faded Background Image ---------- */
+.hero {
+    background-image: url('m3r.jpg'); /* Background image for the hero section */
     background-size: contain; /* Ensures the image covers the section while maintaining aspect ratio */
     background-position: center; /* Centers the image, displaying the middle part */
     background-attachment: fixed; /* Keeps the background fixed while scrolling */
     position: relative;
-    color: var(--white);
+    color: var(--white); /* White text for the hero section */
     text-align: center;
     padding: 30rem 1rem; /* Adjust padding to suit your design */
-  }
-  
-  .hero::before {
+}
+
+.hero::before {
     content: '';
     position: absolute;
     top: 0;
@@ -138,107 +138,106 @@
     bottom: 0;
     background: rgba(0, 0, 0, 0.4); /* Dark overlay with 40% opacity */
     z-index: -1; /* Keeps the overlay behind the content */
-  }
-  
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: .5rem;
-    padding: 1rem 2rem;
-    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero h1 {
+    font-size: 3rem; /* Font size for the main heading */
+    margin-bottom: .5rem; /* Space below the heading */
+    padding: 1rem 2rem; /* Padding around the heading */
+    background: rgba(0, 0, 0, 0.6); /* Dark background for better readability */
     display: inline-block;
-    border-radius: 8px;
-    color: white; /* Ensures the text is white */
-  }
-  
-  .hero p {
-    font-size: 1.5rem;
-  }
-  
-  /* ----------  Layout ---------- */
-  .container {
-    max-width: 960px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
-  
-  section {
-    margin-bottom: 2rem;
-  }
-  
-  /* ----------  Footer ---------- */
-  .footer {
-    background: var(--navy);
-    color: var(--white);
-    text-align: center;
-    padding: 1rem;
-    font-size: .9rem;
-  }
-  
-  .footer a {
-    color: var(--accent);
-  }
-  
-  .footer a:hover {
-    text-decoration: underline;
-  }
-  
-  /* =========================================================
-     RESPONSIVE TWEAKS
-     ========================================================= */
-  
-  /* ----------  0 – 479 px : small phones ---------- */
-  @media (max-width: 479px) {
+    border-radius: 8px; /* Rounded corners for the heading box */
+    color: white; /* White text */
+}
+
+.hero p {
+    font-size: 1.5rem; /* Font size for the subtitle */
+}
+
+/* ----------  Layout ---------- */
+.container {
+    max-width: 960px; /* Limits the max width of content */
+    margin: 2rem auto; /* Centers the container with top and bottom margins */
+    padding: 0 1rem; /* Padding on left and right */
+}
+
+section {
+    margin-bottom: 2rem; /* Adds space between sections */
+}
+
+/* ----------  Footer ---------- */
+.footer {
+    background: var(--navy); /* Dark blue background for the footer */
+    color: var(--white); /* White text in footer */
+    text-align: center; /* Centers text in footer */
+    padding: 1rem; /* Padding inside footer */
+    font-size: .9rem; /* Font size for footer text */
+}
+
+.footer a {
+    color: var(--accent); /* Accent color for footer links */
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+/* =========================================================
+   RESPONSIVE TWEAKS
+   ========================================================= */
+
+/* ----------  0 – 479 px : small phones ---------- */
+@media (max-width: 479px) {
     .navbar {
-      margin: 10px;
-      padding: 12px 20px;
-      font-size: 1.1rem;
+        margin: 10px;
+        padding: 12px 20px;
+        font-size: 1.1rem; /* Smaller font size for smaller screens */
     }
     .brand img {
-      width: 60px;
-      margin-right: 8px;
+        width: 60px; /* Smaller logo size for small screens */
+        margin-right: 8px; /* Adjust space between logo and text */
     }
     body {
-      padding-top: 88px;
+        padding-top: 88px; /* Adjust padding to account for smaller navbar */
     }
-  
+
     .grid {
-      grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack grid items for small screens */
     }
-  
+
     .carousel-wrapper {
-      width: 100%;
+        width: 100%; /* Full-width carousel wrapper */
     }
-  
+
     .carousel .card {
-      width: 80%;
-      margin: 0 auto;
+        width: 80%; /* Smaller card width for small screens */
+        margin: 0 auto;
     }
-  
+
     .carousel .card img {
-      max-height: 150px;
+        max-height: 150px; /* Smaller image size */
     }
-  }
-  
-  /* ----------  480 – 899 px : large phones & tablets ---------- */
-  @media (min-width: 480px) and (max-width: 899px) {
+}
+
+/* ----------  480 – 899 px : large phones & tablets ---------- */
+@media (min-width: 480px) and (max-width: 899px) {
     .carousel-wrapper {
-      width: 100%;
+        width: 100%; /* Full-width carousel wrapper */
     }
-  
+
     .carousel .card {
-      width: 90%;
-      margin: 0 auto;
+        width: 90%; /* Slightly smaller card width for mid-size screens */
+        margin: 0 auto;
     }
-  
+
     .carousel .card img {
-      max-height: 180px;
+        max-height: 180px; /* Larger image size */
     }
-  }
-  
-  /* ----------  900 px + : laptops & desktops ---------- */
-  @media (min-width: 900px) {
+}
+
+/* ----------  900 px + : laptops & desktops ---------- */
+@media (min-width: 900px) {
     .carousel .card img {
-      max-height: 180px;
+        max-height: 180px; /* Standard image size for larger screens */
     }
-  }
-  
+}
