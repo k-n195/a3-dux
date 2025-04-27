@@ -8,18 +8,18 @@
 </head>
 
 <body>
-  <!-- Navigation Bar Section -->
+  <!-- Navbar Section: This is the navigation bar with links and brand logo -->
   <nav class="navbar">
-    <!-- The brand logo and link to the homepage -->
+    <!-- Brand logo with a link to the homepage -->
     <a href="index.html" class="brand">
       <img src="bm.jpg.jpg" alt="BMW logo" />
       BMW Approved Used
     </a>
 
-    <!-- Mobile navigation toggle button -->
+    <!-- Mobile navigation toggle button for smaller screens -->
     <button class="toggle" id="navToggle">☰</button>
 
-    <!-- Navigation links -->
+    <!-- Navigation links for the gallery and other pages -->
     <div class="nav-links" id="navLinks">
       <a href="page2.html">Gallery</a>
       <a href="page3.html">About Us</a>
@@ -27,17 +27,17 @@
     </div>
   </nav>
 
-  <!-- Hero Section: The first section of the page -->
+  <!-- Hero Section: Introduction and main heading of the page -->
   <header class="hero">
-    <!-- Title and subtitle of the page -->
+    <!-- Main heading and short description -->
     <h1>BMW Gallery</h1>
     <p>High-performance vehicles for every enthusiast</p>
   </header>
 
   <main class="container">
-    <!-- Gallery Section: This section contains the car images and descriptions -->
+    <!-- Gallery Section: The gallery with car images and descriptions -->
     <section class="gallery">
-      <!-- Slider 1: Displays a set of cars with their images and descriptions -->
+      <!-- Slider 1: Displaying the first set of cars with their images -->
       <div class="slider">
         <div class="slide" onclick="openFullscreen('m2.jpg')">
           <img src="m2.jpg" alt="BMW M2 Coupe">
@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <!-- Slider 2: Displays another set of cars with their images and descriptions -->
+      <!-- Slider 2: Displaying the second set of cars with their images -->
       <div class="slider">
         <div class="slide" onclick="openFullscreen('m5.jpg')">
           <img src="m5.jpg" alt="BMW M5 CS">
@@ -71,19 +71,19 @@
     </section>
   </main>
 
-  <!-- Fullscreen Modal: This section is for showing a full-screen image when a car image is clicked -->
+  <!-- Fullscreen Modal: This modal is for displaying a car image in full-screen when clicked -->
   <div id="modal" class="modal" onclick="closeFullscreen()">
     <img id="modalImg" class="modal-content" />
   </div>
 
-  <!-- Footer Section: Contact info section -->
+  <!-- Footer Section: Contact information and email link -->
   <footer class="footer">
-    <!-- Contact information with a link to email -->
+    <!-- Contact information and email link -->
     Contact us: <a href="mailto:info@bmwusedcars.co.uk">info@bmwusedcars.co.uk</a>
   </footer>
 
   <script>
-    // Toggle the visibility of the navigation menu when clicked (used for mobile view)
+    // Mobile menu toggle functionality (for small screens)
     document.getElementById('navToggle').onclick = () =>
       document.getElementById('navLinks').classList.toggle('show');
 
