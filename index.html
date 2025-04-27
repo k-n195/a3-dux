@@ -8,32 +8,32 @@
 </head>
 
 <body>
-  <!-- NAVBAR -->
+  <!-- Navigation Bar -->
   <nav class="navbar">
     <a href="index.html" class="brand">
       <img src="bm.jpg.jpg" alt="BMW logo" />
       BMW Approved Used
     </a>
 
-    <button class="toggle" id="navToggle">☰</button>
+    <button class="toggle" id="navToggle" aria-label="Toggle navigation menu">☰</button>
 
     <div class="nav-links" id="navLinks">
       <a href="page2.html">Gallery</a>
       <a href="page3.html">About Us</a>
-      <a href="https://usedcars.bmw.co.uk/" target="_blank">Models</a>
+      <a href="https://usedcars.bmw.co.uk/" target="_blank" rel="noopener noreferrer">Models</a>
     </div>
   </nav>
 
-  <!-- HERO (with Faded Background) -->
+  <!-- Hero Section with Faded Background -->
   <header class="hero">
     <h1>BMW Approved Used Cars</h1>
     <p>Luxury and performance you can trust</p>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- Main Content Area -->
   <main class="container">
 
-    <!-- Benefits -->
+    <!-- Benefits Section -->
     <section>
       <h2>Why Choose BMW Approved Used?</h2>
       <ul class="bullets">
@@ -45,20 +45,19 @@
       </ul>
     </section>
 
-    <!-- Finance -->
+    <!-- Finance Options Section -->
     <section>
       <h2>Flexible Finance Options</h2>
       <p>Plans to suit every budget.</p>
-      <a href="https://usedcars.bmw.co.uk/benefits/" class="btn btn-warning" target="_blank">Learn more</a>
+      <a href="page3.html" class="btn btn-warning">Learn more</a>
     </section>
-
-    <!-- Cars -->
+    <!-- Featured BMWs Section -->
     <section>
       <h2>Featured BMWs</h2>
       <div class="carousel-wrapper">
-        <button class="carousel-control left" id="prevBtn">&#10094;</button>
+        <button class="carousel-control left" id="prevBtn" aria-label="Previous car">&#10094;</button>
         <div class="carousel" id="carousel">
-          <!-- card 1 -->
+          <!-- Car 1: BMW 3 Series -->
           <div class="card">
             <img src="3-s.png" alt="BMW 3 Series">
             <div class="card-body">
@@ -68,7 +67,7 @@
             </div>
           </div>
 
-          <!-- card 2 -->
+          <!-- Car 2: BMW X5 -->
           <div class="card">
             <img src="x5.png" alt="BMW X5" />
             <div class="card-body">
@@ -78,7 +77,7 @@
             </div>
           </div>
 
-          <!-- card 3 -->
+          <!-- Car 3: BMW M4 Competition -->
           <div class="card">
             <img src="m42.png" alt="BMW M4 Competition" />
             <div class="card-body">
@@ -88,7 +87,7 @@
             </div>
           </div>
 
-          <!-- card 4 (New) -->
+          <!-- Car 4: BMW M5 -->
           <div class="card">
             <img src="m5.jpg" alt="BMW M5" />
             <div class="card-body">
@@ -98,7 +97,7 @@
             </div>
           </div>
 
-          <!-- card 5 (New) -->
+          <!-- Car 5: BMW i8 -->
           <div class="card">
             <img src="i8.jpg" alt="BMW i8" />
             <div class="card-body">
@@ -108,36 +107,38 @@
             </div>
           </div>
         </div>
-        <button class="carousel-control right" id="nextBtn">&#10095;</button>
+        <button class="carousel-control right" id="nextBtn" aria-label="Next car">&#10095;</button>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- Footer Section -->
   <footer class="footer">
     Contact us: <a href="mailto:info@bmwusedcars.co.uk">info@bmwusedcars.co.uk</a>
   </footer>
 
   <script>
+    // Toggle the navigation menu visibility on mobile
     document.getElementById('navToggle').onclick = () =>
       document.getElementById('navLinks').classList.toggle('show');
 
-    // Carousel Functionality
+    // Slider functionality: move between cars
     let currentIndex = 0;
     const cards = document.querySelectorAll('.carousel .card');
     const totalCards = cards.length;
-    
+
     document.getElementById('nextBtn').addEventListener('click', () => {
       currentIndex = (currentIndex + 1) % totalCards;
-      updateCarousel();
+      updateSlider();
     });
 
     document.getElementById('prevBtn').addEventListener('click', () => {
       currentIndex = (currentIndex - 1 + totalCards) % totalCards;
-      updateCarousel();
+      updateSlider();
     });
 
-    function updateCarousel() {
+    // Update the slider by translating its position
+    function updateSlider() {
       const carousel = document.getElementById('carousel');
       const cardWidth = cards[0].offsetWidth;
       carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
