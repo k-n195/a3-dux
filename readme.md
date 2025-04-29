@@ -52,9 +52,8 @@ High-resolution images of the BMW vehicles are sourced from Unsplash, ensuring w
 Note: A professional, clean look was prioritized in selecting images, ensuring they match BMW’s sophisticated image.
 
 Wireframes
-View wireframes here
+![image](https://github.com/user-attachments/assets/e30c8600-9ff1-4202-af54-3b933df825f4)
 
-Note: Initial wireframes were based on typical car dealership sites but underwent revisions to better align with BMW’s clean, minimalist design language.
 
 Development Process
 Features
