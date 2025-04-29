@@ -54,6 +54,9 @@ Note: A professional, clean look was prioritized in selecting images, ensuring t
 Wireframes
 ![image](https://github.com/user-attachments/assets/e30c8600-9ff1-4202-af54-3b933df825f4)
 
+![image](https://github.com/user-attachments/assets/22bf500c-77ba-43e8-96ef-0af0274314d9)
+
+
 
 Development Process
 Features
